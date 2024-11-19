@@ -1,0 +1,30 @@
+http://linuxcommand.org/tlcl.php
+
+https://repositori.upf.edu/bitstream/handle/10230/560/691.pdf?sequence=1
+
+https://qoppac.blogspot.com/
+
+Look into ccxt api
+
+Things to check:
+1. current long ADAUSDT 5 -> in order to short ADAUSDT -7 -> Is it enough to just call sell 12? Or is it sell 5, then sell 7?
+2. How much does short selling take up in cash value?
+
+Crontab -e:
+0 * * * * /usr/bin/python3 /home/ec2-user/crypto_v2/view_bithumb_trader.py > /home/ec2-user/bithumb.log 2>&1
+0 * * * * /usr/bin/python3 /home/ec2-user/crypto_v3/view_binance_trader.py > /home/ec2-user/binance.log 2>&1
+15 */12 * * * /usr/bin/python3 /home/ec2-user/crypto_v3/view_cron_binance_candlestick.py
+45 */12 * * * /usr/bin/python3 /home/ec2-user/crypto_v3/view_cron_bithumb_candlestick.py
+
+EC2 Instance IDs:
+ec2-3-35-3-182.ap-northeast-2.compute.amazonaws.com
+ec2-54-180-147-18.ap-northeast-2.compute.amazonaws.com
+
+API Key:
+FTX BAB Api Key:
+public - 1FgE-fgbgvbSGBx61whndqjcXjY8wB4SfLOYIex_
+private - hk2TrqqD2bcxQjNXUhzqFDi74sSHT__4VBe3j19d
+
+https://smallake.kr
+
+117

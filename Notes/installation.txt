@@ -1,0 +1,11 @@
+1. pip3 install PyMySQL
+2. yum install mysql-server / yum install mysql -> mariadb installed
+   OR
+   yum install mariadb-server -> especially for ec2 instances
+
+3. setting initial password: mysqladmin -u root password {enter password here}
+
+pip3 install --user pybithumb==1.0.18
+pip3 install --user python-binance
+pip3 install --user statsmodels
+pip3 install --user ccxt

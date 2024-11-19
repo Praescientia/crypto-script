@@ -1,0 +1,21 @@
+Model, View, Controller
+
+1. Data Managing Model
+    - Maybe just deal with csv files initially?
+    - End goal should be to get an SQL server running
+2. Data Parsing Model (Trading Model)
+2. Trading Controller
+    - Exchange (or local) specific order submission model
+    - Make portfolios, etc
+3. Backtesting Model
+
+Models interact with data. Models can call other models. Models can be called by Controllers. Models cannot be called by Views.
+Controllers interact with Models. Controllers cannot interact with data directly. Controllers can be called by Controllers.
+Views interact with Controllers. Views cannot interact with Models.
+
+For every module, only the main_funcs can be called from other modules. Helper methods cannot be called from other modules.
+
+Models do not print anything, except logging.
+Controllers can print messages.
+
+Design Mistake: Bfutures database should be named BfuturesPrice. mb lol.
