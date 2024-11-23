@@ -22,3 +22,19 @@ scheduler 같은 경우도 그냥 crontab으로 해버리는 것... 이지만 �
 어떻게 방향을 잡던 간에, 젠이 스스로 편한 방식으로 코딩하고 구조 짜나가면 나도 약간씩 거기에 의견 첨가 하는 식으로 할게. 내가 항상 플젝 하던 방식이 굳어져 있어서 예전에 협업 할 때 보면 내 방식에 적응하는 learning curve에서 다들 일단 흥미가 식더라고 ㅋㅋㅋㅋ
 
 이 정도가 내가 생각했던 대략적인 플젝 그림이고, trading system이 어떤 부분들이 있어야 될지, 이런 것들은 나중에 더 적어둘게.
+
+# Cursory Plan
+
+Can make two strategies:
+
+1. Long-only: 코인베이스 같은 곳에서 long only strategy
+
+2. Market-netural: Phemex 같은 곳에서 crypto perpetual futures 통해서 롱숏
+
+데이터 관리는 코인베이스나 Phemex에서 가격 다운 받아서 관리.
+
+Base signal들은 https://github.com/twopirllc/pandas-ta 이런 곳에서 technical indicator들 만들고, 리서치는 대부분 이런 base signal들을 묶을 수 있는 ensemble method랑 백테스팅 코드 만드는 거에 포커스 두면 좋을거 같아. 
+
+Universe selection은 백테스팅 가능한 히스토리가 있고, 웬만하면 de-list 안 될거 같은 코인 몇개 골라서 20~30개 정도로 일단 form 하는게 쉬울거야.
+
+Execution engine은 최대한 간단하게, market order 위주로 그냥 원하는 quantity만큼 바로바로 사고 파는 알고리즘 만들어도 괜찮을 거 같아. 약간 더 복잡하게 하면 순식간에 많이 복잡해지는데, 그만큼 money save가 될 수도 있어서 나중에 더 복잡화 할까 고민하면 될듯.
