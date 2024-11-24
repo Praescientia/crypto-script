@@ -38,3 +38,15 @@ Base signal들은 https://github.com/twopirllc/pandas-ta 이런 곳에서 techni
 Universe selection은 백테스팅 가능한 히스토리가 있고, 웬만하면 de-list 안 될거 같은 코인 몇개 골라서 20~30개 정도로 일단 form 하는게 쉬울거야.
 
 Execution engine은 최대한 간단하게, market order 위주로 그냥 원하는 quantity만큼 바로바로 사고 파는 알고리즘 만들어도 괜찮을 거 같아. 약간 더 복잡하게 하면 순식간에 많이 복잡해지는데, 그만큼 money save가 될 수도 있어서 나중에 더 복잡화 할까 고민하면 될듯.
+
+# 2024-11-24
+
+약간 더 생각해봤는데, 이 프로젝트의 의미가 lightweight한 crypto trading solution이라면, sqlite라고 해도 데이터베이스를 많이 사용하는 건 그거에 위배 돼. 최대한 text file이랑 json file 등으로 데이터 저장하고, OHLCV (open, high , low, close, volume) price data만 데이터베이스를 활용해서 저장하자.
+
+데이터 vendor은 coinmarketcap, coingecko, 그리고 ccxt 라이브러리로 access 할 수 있는 exchange 들로 생각하고 있어. 그 중에 ccxt가 다양한 exchange를 한번에 쓸 수 있으니까 일단 ccxt로 데이터 gather, 그 담에 coingecko, 그 담에 coinmarketcap, coinbase들로 늘리자 (만약에 늘릴 생각이 있다면).
+
+=> 데이터 모으는 건 내가 우선 먼저 할게. crypto universe selection은 cryscript/universe.txt 파일에 정리해서 올릴거야.
+
+**여기서 universe란**
+
+우리가 실제로 트레이딩 할 모든 코인들의 집합. 예를 들어 simply could be a universe of three coins {'BTC', 'ETH', 'SOL'}. 일단은 10개 메이저 한 거 골라서 포함 시킬게.
